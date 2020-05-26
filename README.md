@@ -8,3 +8,5 @@ A heckin lot of stuff. Ideas from Modern Indicators, Harmony and more. This aims
 
 - if you modify it, gotta give me credit 😉
 - no profiting/commercial use without express permission 😡
+
+**Please note this is being hosted off of Githack under a development URL. Until I get a GitHub Pages CDN up and running, please don't spam refresh or something like that. Thanks.**
