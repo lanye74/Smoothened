@@ -1,11 +1,11 @@
 /**
   * @name Smoothened
-  * @version 1.2.0
-  * @description Smoothened, *everything.* Includes ideas from Modern Indicators and Harmony.
+  * @version 2.0.0
+  * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
   * @author LayneTheEpic#9891
-  * @license CC BY-NC-SA 4.0
+  * @license MIT
   **/
 
 
@@ -21,26 +21,9 @@ It was slightly modified to make it more light mode friendly though.
 
 :root {
 	--transition-time: 0.2s;
-	--indicator-size: 2px;
 	
 	--selection-color: #a5b3ff;
 	--blurple: #7289da;
-	
-	--channel-focused: #7289da1d;
-	--channel-focused-hover: #7289da2d;
-
-	/* Dark mode */
-
-	--channel-unread-marker: #fffa;
-	--channel-unread: #ffffff0a;
-	--channel-unread-hover: #ffffff20; 
-
-	/* Light mode */
-
-	--l-channel-unread-marker: #000a;
-	--l-channel-unread: #0000000a;
-	--l-channel-unread-hover: #00000020;
-	
 
 	--input-border-width: 1px;
 }
@@ -55,14 +38,6 @@ It was slightly modified to make it more light mode friendly though.
 
 .emojiItem-14v6tW.emojiItemSelected-1aLkfV { /* Namely, right click menu */
 	box-shadow: none;
-}
-
-/* Stole this snippet from emma hehe */
-
-.emojiItem-14v6tW .emojiItemImageLoading-1yEIxx {  /* Fix loading emojis, Discord uses png by default, why?? */
-	background-image: none;
-	background-color: var(--background-primary);
-	border-radius: 30%;
 }
 
 /* Take the text bar and round that bad boy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -293,71 +268,6 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 /* Might be more; don't know them */
 
 
-/* Channel unread thingy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd { /* The channel name gets rounded */
-	padding: 0;
-	border-radius: 0 4px 4px 0;
-}
-
-.content-3at_AU {	
-	border-radius: 0 4px 4px 0; /* so do the innards */
-}
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA > .unread-3zKkbm { /* Create the marker */
-	border-radius: 0;
-	
-	height: 100%;
-	top: 0;
-	left: 0;
-	margin: 0;
-	
-	background: var(--channel-unread-marker);
-	
-	width: var(--indicator-size);
-}
-
-/* Add light theme colors (-l- prefix means light mode) */
-
-html.theme-light .iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA > .unread-3zKkbm {
-	background: var(--l-channel-unread-marker);
-}
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA > .content-3at_AU {
-	background: var(--channel-unread);
-}
-
-html.theme-light .iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA > .content-3at_AU {
-	background: var(--l-channel-unread);
-}
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA:hover > .content-3at_AU {
-	background: var(--channel-unread-hover);
-}
-
-html.theme-light .iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA:hover > .content-3at_AU {
-	background: var(--l-channel-unread-hover);
-}
-
-
-.content-3at_AU { /* Create space for marker */
-	margin-left: calc(var(--indicator-size) + 2px);
-}
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd.modeSelected-1zApJ_ { /* Make an identical marker for selected channel, via border (since there's no marker element */
-	border-left: solid var(--indicator-size) var(--blurple);
-}
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd.modeSelected-1zApJ_ > .content-3at_AU { /* focused channel color */
-	background: var(--channel-focused); /* works for both themes, no worries */
-	margin: 0;
-}
-
-.iconVisibility-1bOqu7.wrapper-1ucjTd.modeSelected-1zApJ_:hover > .content-3at_AU { /* Same for hover */
-	background: var(--channel-focused-hover) !important; /* also works for both themes */
-}
-
-
 /* Jump to present ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .jumpToPresentBar-9P20AM.barBase-39XTcM { /* Center it and convert width to wrap around elements */
@@ -380,31 +290,6 @@ html.theme-light .iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA:hover >
 	padding: 8px !important;
 }
 
-/* Harmony Indicators ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.iconBadge-2wi9r4.iconBadge-2NuvG9.base-PmTxvP, /* Audio from server icon */
-.numberBadge-2s8kKX, /* Noti amount */
-.iconBadge-qZ4Ksk /* Pin mark */
-{
-	background-color: var(--blurple) !important;
-}
-
-.icon-3BcwQu.iconServer-3Z_nSE, /* Deafened in VC */
-.circleIconButton-jET_ig, /* Server discovery, create/join */
-.strikethrough-1n4ekb /* Strikethrough on mute, deafen */
-{
-	color: var(--blurple);
-}
-
-.circleIconButton-jET_ig:hover, .circleIconButton-jET_ig.selected-ugP_am { /* Add hovers for 'create a new server', discovery */
-	background-color: var(--blurple);
-	color: var(--interactive-active);
-}
-
-.item-2hkk8m { /* Server 'pills' */
-	background-color: var(--blurple) !important;
-}
-
 /* Text input ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z { /* Main text area; accomadate for border */
@@ -416,7 +301,7 @@ html.theme-light .iconVisibility-1bOqu7.wrapper-1ucjTd.modeUnread-1zpFdA:hover >
 	transition: background, border, filter, var(--transition-time);
 }
 
-.form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z,
+.form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z, /* More stuff in input... */
 .form-2fGMdU .scrollableContainer-2NUZem.webkit-HjD9Er,
 .form-2fGMdU .scrollableContainer-2NUZem.webkit-HjD9Er > .inner-MADQqc /* Hide backgrounds */
 {
