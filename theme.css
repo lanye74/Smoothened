@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.1.1
+  * @version 2.1.2
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -358,6 +358,10 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 .form-2fGMdU:hover /* Under any of these conditions, make the top margin normal (not -8) so that the jump to present moves up */
 {
 	margin-top: 0 !important;
+}
+
+.form-2fGMdU::before {
+	display: none;
 }
 
 /* Small settings tweaks ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
