@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.0.0
+  * @version 2.1.0
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -20,38 +20,12 @@ It was slightly modified to make it more light mode friendly though.
 /* Config ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 :root {
-	--transition-time: 0.2s;
+	--smoothened-transition-time: 0.2s;
 	
-	--selection-color: #a5b3ff;
+	--smoothened-selection-color: #a5b3ff;
 	--blurple: #7289da;
 
-	--input-border-width: 1px;
-}
-
-/* Search bar  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.search-36MZv-, .searchBar-3dMhjb { /* Discord natively supports expanding search bar, so it just needs a transition */
-	transition: width var(--transition-time);
-}
-
-/* Emoji picker stuffs */
-
-.emojiItem-14v6tW.emojiItemSelected-1aLkfV { /* Namely, right click menu */
-	box-shadow: none;
-}
-
-/* Take the text bar and round that bad boy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.channelTextArea-rNsIhG.channelTextArea-2VhZ6z,
-.scrollableContainer-2NUZem.webkit-HjD9Er {
-	border-radius: calc(22px + var(--input-border-width));
-}
-
-/* Lighten up some colors (so you can seeeeeeee) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.content-1o0f9g { /* Message date divider */
-	color: var(--interactive-normal);
-	background: none;
+	--smoothened-input-border-width: 1px;
 }
 
 /* Friends header  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -68,25 +42,36 @@ It was slightly modified to make it more light mode friendly though.
 
 .panels-j1Uci_ > .container-1giJp5, /* Underneath stream to server */
 .panel-24C3ux.activityPanel-28dQGo, /* Stream activity */
+#pinned-messages .header-ykumBX, /* pinned messages header */
 .tabBarContainer-1s1u-z, /* User fullscreen popout */
 .tabBody-3YRQ8W::before, /* Friends menu bar */
 .content-yTz4x3::before, /* Channel header */
 .peopleListItem-2nzedh, /* server person */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
-.header-2o-2hj /*Server menu dropdown inside */
+.header-2o-2hj, /*Server menu dropdown inside */
+.game-1ipmAa, /* Game activity item */
+.item-3eFBNF /* Powercord translation thingy */
 {
-	box-shadow: none;
-	border: none;
+	box-shadow: none !important;
+	border: none !important;
 }
 
-.separator-2I32lJ { /* Settings divider */
+.separator-2I32lJ, /* Settings side divider */
+.divider-3573oO /* Settings internal divider */
+{ 
 	visibility: hidden;
 }
 
 /* Gradients  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.wrapper-1Rf91z.guilds-1SWlCJ > .scrollerWrap-2lJEkd.scrollerWrap-1IAIlv > .scroller-2FKFPG.scroller-2TZvBN { /* Server list container */
-	background: linear-gradient(90deg, var(--background-tertiary) 0, var(--background-secondary) 65%);
+/* Pinned message popout */
+
+#pinned-messages .header-ykumBX {
+	background: linear-gradient(0deg, var(--background-secondary) 10%, var(--background-tertiary) 70%);
+}
+
+#pinned-messages .footer-1kmXd4 {
+	background: linear-gradient(180deg, var(--background-secondary) 10%, var(--background-tertiary) 70%);
 }
 
 .container-2Rl01u.hasBanner-14PPlG > .header-2o-2hj { /* If there's a banner, keep the server dropdown transparent... */
@@ -100,7 +85,7 @@ It was slightly modified to make it more light mode friendly though.
 .header-2o-2hj, /* ... otherwise show a gradient behind the dropdown!     ^  */
 .panels-j1Uci_ /* Profile container (at bottom) */
 {
-	background: linear-gradient(90deg, var(--background-secondary) 50%, var(--background-primary) 100%);
+	background: linear-gradient(90deg, var(--background-tertiary) 0, var(--background-secondary) 70%, var(--background-primary) 100%);
 }
 
 .container-1r6BKw { /* Top bar (friends list) */
@@ -109,8 +94,8 @@ It was slightly modified to make it more light mode friendly though.
 	/* AAAAA MY BRAIN HURTS */
 	
 	/* let me explain:
-		linear-gradient from left to right
-		first color stop is at 100%-420px (container width: 420px), which is at the left-most side of the thing, start at 100%, subtract the width of the container - 65% of it's width
+		linear gradient from left to right
+		first color stop is at 100%-420px (container [max] width: 420px), which is at the left-most side of the thing, start at 100%, - width of the container - 65% of it's width
 		= color stop location
 		yaay
 		fun
@@ -125,6 +110,35 @@ It was slightly modified to make it more light mode friendly though.
 	background: linear-gradient(90deg, var(--background-primary) 0, var(--background-secondary) 65%) !important;
 }
 
+
+
+/* Leave server container */
+.modal-yWgWj- .footer-3rDWdC { /* ... the footer */
+	background: linear-gradient(180deg, var(--background-primary) 30%, var(--background-secondary) 80%);
+	box-shadow: none; /* removes line */
+}
+
+/* changelog */
+
+.modal-1sor29 .inner-ZyuQk0 {
+	background: linear-gradient(180deg, var(--background-primary) 25%, var(--background-secondary) 75%);
+}
+
+/* fix a dumb button with bad colors (read: leave server button) */
+
+.lookFilled-1Gx00P.colorRed-1TFJan {
+	background-color: #f04747;
+}
+
+.lookFilled-1Gx00P.colorRed-1TFJan:hover {
+	background-color: #d42626;
+	box-shadow: 0 0 8px #a70e0e;
+}
+
+.lookFilled-1Gx00P.colorRed-1TFJan:active {
+	background-color: #a70e0e;
+	box-shadow: 0 0 12px #860b0b;
+}
 
 /* Fix the server image thingy */
 
@@ -189,40 +203,57 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 .message-2qnXI6.cozyMessage-3V1Y8y.groupStart-23k01U.wrapper-2a6GCs, /* Message */
 .voiceUser-14U_Ns > .content-3xS9Lh > .username-lm8y6T, /* VC user name */
+.withFrame-haYltI.titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... anyways these are the min, max, close buttons */
 .message-2qnXI6.cozyMessage-3V1Y8y.wrapper-2a6GCs, /* Message, without name */
 .offline-3nJYBR.container-2Pjhx-.clickable-1JJAn8, /* Offline */
 .latin24CompactTimeStamp-2V7XIQ.timestamp-3ZCmNB, /* Message timestamp */
-.emojiItem-14v6tW.emojiItemSelected-1aLkfV, /* Emoji in emojpi picker */
 .iconVisibility-1bOqu7.wrapper-1ucjTd, /* Channel background, essentially */
+.option-96V44q.searchOption-zQ-1l6, /* search thingy option */
+.lookFilled-1Gx00P.colorRed-1TFJan, /* Red buttons; read: leave server */
 .wrapper-1ucjTd .content-3at_AU, /* Channel name */
-.item-1tOPte.labelContainer-1BLJti, /* Popup actions */
 .name-IbjUBS.container-2ax-kl, /* Server category name */
 .button-14-BFJ.button-38aScr, /* Mute, deafen, settings */
 .side-8zPYf6 > .item-PXvHYJ, /* Settings item */
+.embedSuppressButton-1FonMn, /* Hide embed */
+.item-26Dhrx.card-3Qj_Yx, /* Discord-style radio inputs */
 .spoilerWarning-2aAZq1, /* Spoiler warning */
 .note-3HfJZ5 textarea, /* User "note" textarea */
 .voiceUser-14U_Ns, /* VC user */
+.emojiItem-14v6tW, /* Emoji in emoji picker */
+.button-1-5Aqk, /* recent mentions; jump/close mention */
 .layout-2DM8Md, /* Online members */
+.button-F9qN4n, /* Emoji in context menu */
 .name-3_Dsmg, /* Channel name */
 .interactive, /* Personal mentions */
+.item-3eFBNF, /* Powercord language options */
+.item-1tOPte, /* Popup actions */
 .mention /* Role mentions */
 {
-	transition: background, color, background-color, opacity, var(--transition-time);
+	transition: background, color, background-color, opacity, box-shadow, var(--smoothened-transition-time);
 }
 
 .peopleListItem-2nzedh { /* Friends center menu item */
-	transition: background var(--transition-time); /* I dunno why it's so picky ;-; */
+	transition: background var(--smoothened-transition-time); /* I dunno why it's so picky ;-; */
 }
 
+.categoryItemGuildCategory-3MisqI foreignObject, /* New emoji picker; servers on the side */
+.overlayToggleIcon-2liB3r, /* Game activity; toggle overlay */
 .addButtonIcon-3u-3Hu, /* Add channel in category */
+.icon-1IxfJ2 path /* Status menu icons (online, dnd, invis, idle) */
 .icon-WnO6o2, /* Server category arrow (collapser) */
-.icon-22AiRD /* Mute channel, pins, recent mentions, help, member list */
+.icon-22AiRD, /* Mute channel, pins, recent mentions, help, member list */
+.icon-3D60ES /* Buttons in main chat box [useless] */
 {
-	transition: fill, transform, var(--transition-time);
+	transition: fill, transform, mask, var(--smoothened-transition-time);
 }
 
 .iconWrapper-2OrFZ1:last-child {
 	display: none; /* remove useless help button */
+}
+
+
+.option-96V44q.searchOption-zQ-1l6::after { /* search thingy option */
+	background: transparent !important;
 }
 
 /* Member popout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -278,7 +309,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 	padding-bottom: 0;
 
-	transition: padding-bottom var(--transition-time);
+	transition: padding-bottom var(--smoothened-transition-time);
 }
 
 .jumpToPresentBar-9P20AM.barBase-39XTcM > .barButtonMain-1giYuj.barButtonBase-3UKlW2 { /* Remove text .-. */
@@ -293,12 +324,12 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 /* Text input ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z { /* Main text area; accomadate for border */
-	margin-bottom: calc(24px - var(--input-border-width));
+	margin-bottom: calc(24px - var(--smoothened-input-border-width));
 	
 	
-	border: var(--input-border-width) solid transparent;
+	border: var(--smoothened-input-border-width) solid transparent;
 	
-	transition: background, border, filter, var(--transition-time);
+	transition: background, border, filter, var(--smoothened-transition-time);
 }
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z, /* More stuff in input... */
@@ -314,12 +345,12 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 }
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z:focus-within { /* while focused, add border + default border */
-	border: var(--input-border-width) solid var(--blurple);
+	border: var(--smoothened-input-border-width) solid var(--blurple);
 	background: var(--channeltextarea-background);
 }
 
 .form-2fGMdU { /* Add transition to top margin, which is needed for the jump to present to move */
-	transition: margin-top var(--transition-time);
+	transition: margin-top var(--smoothened-transition-time);
 }
 
 .form-2fGMdU.channelTextArea-rNsIhG.channelTextArea-2VhZ6z:hover,
@@ -341,13 +372,75 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 	margin-left: 1px;
 }
 
-/* Misc */
+/* Misc ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .sprite-2iCowe { /* Emote picker in chat */
-	transition: transform, filter var(--transition-time);
+	transition: transform, filter var(--smoothened-transition-time);
 }
 
 ::selection { /* < that */
-	background: var(--selection-color); /* meh this color looks better than blurple */
+	background: var(--smoothened-selection-color); /* meh this color looks better than blurple */
 	color: var(--text-normal);
+}
+
+
+.search-36MZv-, .searchBar-3dMhjb { /* Find bar- Discord natively supports expanding search bar, so it just needs a transition */
+	transition: width var(--smoothened-transition-time);
+}
+
+.emojiItem-14v6tW.emojiItemSelected-1aLkfV { /* Remove ugly border from emojis in right click menu */
+	box-shadow: none;
+}
+
+.channelTextArea-rNsIhG.channelTextArea-2VhZ6z, /* Take the text bar and round that bad boy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.scrollableContainer-2NUZem.webkit-HjD9Er {
+	border-radius: calc(22px + var(--smoothened-input-border-width));
+}
+
+.content-1o0f9g { /* Message date divider */
+	color: var(--interactive-normal); /* Lighten up some colors (so you can seeee)*/
+	background: none;
+}
+
+.game-1ipmAa { /* Game activity item */
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+
+/* Unread mentions thingy */
+
+.unread-1s3J68 {
+	padding: 8px 4px;
+}
+
+.item-3eFBNF .flex-1xMQg5.flex-1O1GKY {
+	display: flex;
+	align-items: center;
+
+	padding: 0.25em;
+}
+
+.item-3eFBNF .description-3_Ncsb.formText-3fs7AJ {
+	margin-top: 0;
+}
+
+
+.marginBottom20-32qID7 {
+	margin-bottom: 8px !important;
+}
+
+.marginTop60-3PGbtK {
+	margin-top: 30px !important;
+}
+
+a {
+	text-decoration: underline !important;
+	text-decoration-color: transparent !important;
+
+	transition: text-decoration-color var(--smoothened-transition-time);
+}
+
+a:hover {
+	text-decoration-color: var(--text-link) !important;
 }
