@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.1.0
+  * @version 2.1.1
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -434,13 +434,23 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 	margin-top: 30px !important;
 }
 
-a {
+a.anchorUnderlineOnHover-2ESHQB {
 	text-decoration: underline !important;
 	text-decoration-color: transparent !important;
 
 	transition: text-decoration-color var(--smoothened-transition-time);
 }
 
-a:hover {
+a.anchorUnderlineOnHover-2ESHQB:hover {
 	text-decoration-color: var(--text-link) !important;
+}
+
+
+
+.sidebar-CFHs9e .header-2RyJ0Y {
+	font-size: 110%;
+	font-weight: 500;
+	color: white;
+
+	text-transform: none;
 }
