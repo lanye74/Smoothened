@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.1.2
+  * @version 2.1.3
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -43,6 +43,7 @@ It was slightly modified to make it more light mode friendly though.
 .panels-j1Uci_ > .container-1giJp5, /* Underneath stream to server */
 .panel-24C3ux.activityPanel-28dQGo, /* Stream activity */
 #pinned-messages .header-ykumBX, /* pinned messages header */
+.noticeStreamerMode-2TSQpg, /* Streamer mode dropdown */ 
 .tabBarContainer-1s1u-z, /* User fullscreen popout */
 .tabBody-3YRQ8W::before, /* Friends menu bar */
 .content-yTz4x3::before, /* Channel header */
@@ -411,8 +412,14 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 	margin-bottom: 3px;
 }
 
+/* Notice banner dropdown */ 
 
-/* Unread mentions thingy */
+
+.notice-2FJMB4 {
+	border-radius: 0 0 8px 8px;
+}
+
+/* Unread mentions thingy ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .unread-1s3J68 {
 	padding: 8px 4px;
