@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.1.3
+  * @version 2.1.4
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -464,4 +464,11 @@ a.anchorUnderlineOnHover-2ESHQB:hover {
 	color: white;
 
 	text-transform: none;
+}
+
+
+/* A small tweak on the user note thingy */
+
+.note-3HfJZ5 textarea:hover:not(:focus) {
+	background-color: var(--background-primary) !important;
 }
