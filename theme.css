@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.1.4
+  * @version 2.2.0
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -44,6 +44,8 @@ It was slightly modified to make it more light mode friendly though.
 .panel-24C3ux.activityPanel-28dQGo, /* Stream activity */
 #pinned-messages .header-ykumBX, /* pinned messages header */
 .noticeStreamerMode-2TSQpg, /* Streamer mode dropdown */ 
+.connectedAccount-36nQx7, /* Connected account item */
+.userInfoSection-2acyCx, /* Top of connected accounts */
 .tabBarContainer-1s1u-z, /* User fullscreen popout */
 .tabBody-3YRQ8W::before, /* Friends menu bar */
 .content-yTz4x3::before, /* Channel header */
@@ -55,6 +57,11 @@ It was slightly modified to make it more light mode friendly though.
 {
 	box-shadow: none !important;
 	border: none !important;
+}
+
+.footer-3rDWdC .content-3CCvMx::before, /* various footers */
+.footer-1FPmkC .content-3CCvMx::before {
+	background: none !important;
 }
 
 .separator-2I32lJ, /* Settings side divider */
@@ -202,31 +209,36 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 /* Transitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.message-2qnXI6.cozyMessage-3V1Y8y.groupStart-23k01U.wrapper-2a6GCs, /* Message */
 .voiceUser-14U_Ns > .content-3xS9Lh > .username-lm8y6T, /* VC user name */
 .withFrame-haYltI.titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... anyways these are the min, max, close buttons */
-.message-2qnXI6.cozyMessage-3V1Y8y.wrapper-2a6GCs, /* Message, without name */
+.message-2qnXI6.cozyMessage-3V1Y8y.wrapper-2a6GCs, /* Message */
 .offline-3nJYBR.container-2Pjhx-.clickable-1JJAn8, /* Offline */
 .latin24CompactTimeStamp-2V7XIQ.timestamp-3ZCmNB, /* Message timestamp */
 .iconVisibility-1bOqu7.wrapper-1ucjTd, /* Channel background, essentially */
-.option-96V44q.searchOption-zQ-1l6, /* search thingy option */
 .lookFilled-1Gx00P.colorRed-1TFJan, /* Red buttons; read: leave server */
+.option-96V44q.searchOption-zQ-1l6, /* search thingy option */
+.connectedAccountOpenIcon-2cNbq5, /* link button on user fullscreen popout */
 .wrapper-1ucjTd .content-3at_AU, /* Channel name */
 .name-IbjUBS.container-2ax-kl, /* Server category name */
 .button-14-BFJ.button-38aScr, /* Mute, deafen, settings */
 .side-8zPYf6 > .item-PXvHYJ, /* Settings item */
 .embedSuppressButton-1FonMn, /* Hide embed */
 .item-26Dhrx.card-3Qj_Yx, /* Discord-style radio inputs */
+.connectedAccount-36nQx7, /* Connected account item */
+.inviteRowButton-3opYo2, /* invite people person invite button (...) */
 .spoilerWarning-2aAZq1, /* Spoiler warning */
 .note-3HfJZ5 textarea, /* User "note" textarea */
-.voiceUser-14U_Ns, /* VC user */
+.note-QfFU8y textarea, /* the other one */
+.inviteRow-2L02ae, /* invite people person (...) */
 .emojiItem-14v6tW, /* Emoji in emoji picker */
+.voiceUser-14U_Ns, /* VC user */
+.listRow-hutiT_, /* More user popout stuff; mutual servers + friends */
 .button-1-5Aqk, /* recent mentions; jump/close mention */
-.layout-2DM8Md, /* Online members */
 .button-F9qN4n, /* Emoji in context menu */
-.name-3_Dsmg, /* Channel name */
-.interactive, /* Personal mentions */
+.layout-2DM8Md, /* Online members */
 .item-3eFBNF, /* Powercord language options */
+.interactive, /* Personal mentions */
+.name-3_Dsmg, /* Channel name */
 .item-1tOPte, /* Popup actions */
 .mention /* Role mentions */
 {
@@ -234,7 +246,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 }
 
 .peopleListItem-2nzedh { /* Friends center menu item */
-	transition: background var(--smoothened-transition-time); /* I dunno why it's so picky ;-; */
+	transition: background var(--smoothened-transition-time); /* I dunno why it's so picky with other transitions ;-; */
 }
 
 .categoryItemGuildCategory-3MisqI foreignObject, /* New emoji picker; servers on the side */
@@ -445,15 +457,30 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 	margin-top: 30px !important;
 }
 
-a.anchorUnderlineOnHover-2ESHQB {
+/* <a> tags get a fancy thing now too */
+
+.anchorUnderlineOnHover-2ESHQB {
 	text-decoration: underline !important;
 	text-decoration-color: transparent !important;
 
 	transition: text-decoration-color var(--smoothened-transition-time);
 }
 
-a.anchorUnderlineOnHover-2ESHQB:hover {
+.anchorUnderlineOnHover-2ESHQB:hover {
 	text-decoration-color: var(--text-link) !important;
+}
+
+/* and also mentions */
+
+.mention.wrapper-3WhCwL {
+	text-decoration: underline !important;
+	text-decoration-color: transparent !important;
+
+	transition: text-decoration-color var(--smoothened-transition-time);
+}
+
+.mention.wrapper-3WhCwL:hover {
+	text-decoration-color: var(--blurple) !important;
 }
 
 
@@ -471,4 +498,53 @@ a.anchorUnderlineOnHover-2ESHQB:hover {
 
 .note-3HfJZ5 textarea:hover:not(:focus) {
 	background-color: var(--background-primary) !important;
+}
+
+/* again */
+
+.note-QfFU8y textarea:hover:not(:focus) {
+	background-color: var(--background-primary) !important;
+}
+
+/* Also more stuff... */
+
+
+.tabBarItem-1b8RUP.item-PXvHYJ { /* user popout thingy; but now the bigger one */
+	transition: border-bottom, color, var(--smoothened-transition-time);
+}
+
+
+/* User fullscreen popout */
+
+.modal-3c3bKg .topSectionNormal-2-vo2m {
+	background: linear-gradient(var(--background-tertiary) 50%, var(--background-secondary) 100%);
+}
+
+.userInfoSection-2acyCx:nth-child(2)::before { /* Top of connected accounts */
+	content: "Connected Accounts"; /* Throws a nice little label there as a seperator */
+	text-transform: uppercase;
+
+	font-weight: 700;
+	font-size: 12px;
+
+	position: absolute;
+
+	margin-top: -20px;
+
+	color: var(--channels-default);
+}
+
+.connectedAccounts-repVzS > .connectedAccount-36nQx7:hover {
+	background: var(--background-primary);
+}
+
+
+/* Add roles popout */
+
+.container-VSDcQc .scroller-2FKFPG.autocompleteScroller-iInVqR {
+	background: linear-gradient(var(--background-tertiary) 0, var(--background-secondary) 75%);
+}
+
+.container-VSDcQc .input-1ppKdn {
+	margin: 0; /* friccing friccer trying to misalign */
 }
