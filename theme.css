@@ -26,12 +26,14 @@ It was slightly modified to make it more light mode friendly though.
 	--blurple: #7289da;
 
 	--smoothened-input-border-width: 1px;
+
+	--smoothened-input-focus: #474c57;
 }
 
 /* Friends header  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.container-2Rl01u.clickable-2ap7je, /* /* Server menu (dropdown) */
-.container-1r6BKw.themed-ANHk51, /* Friends menu bar */
+.container-2Rl01u, /* /* Server menu (dropdown) */
+.container-1r6BKw, /* Friends menu bar */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
 .header-2o-2hj /*Server menu dropdown inside */
 {
@@ -82,15 +84,11 @@ It was slightly modified to make it more light mode friendly though.
 	background: linear-gradient(180deg, var(--background-secondary) 10%, var(--background-tertiary) 70%);
 }
 
-.container-2Rl01u.hasBanner-14PPlG > .header-2o-2hj { /* If there's a banner, keep the server dropdown transparent... */
-	background: transparent;
-}
-
 .app-1q1i1E .scroller-2FKFPG.sidebarRegionScroller-3MXcoP, /* Settings */
+.container-2Rl01u:not(.hasBanner-14PPlG) > .header-2o-2hj, /* show a gradient only if there's not a banner  */
 .scroller-2FKFPG.scroller-2wx7Hm, /* Server channels container */
 .scroller-2FKFPG.scroller-1JbKMe, /* Friends list container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
-.header-2o-2hj, /* ... otherwise show a gradient behind the dropdown!     ^  */
 .panels-j1Uci_ /* Profile container (at bottom) */
 {
 	background: linear-gradient(90deg, var(--background-tertiary) 0, var(--background-secondary) 70%, var(--background-primary) 100%);
@@ -212,12 +210,12 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 .voiceUser-14U_Ns > .content-3xS9Lh > .username-lm8y6T, /* VC user name */
 .withFrame-haYltI.titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... anyways these are the min, max, close buttons */
 .message-2qnXI6.cozyMessage-3V1Y8y.wrapper-2a6GCs, /* Message */
-.offline-3nJYBR.container-2Pjhx-.clickable-1JJAn8, /* Offline */
 .latin24CompactTimeStamp-2V7XIQ.timestamp-3ZCmNB, /* Message timestamp */
 .iconVisibility-1bOqu7.wrapper-1ucjTd, /* Channel background, essentially */
 .lookFilled-1Gx00P.colorRed-1TFJan, /* Red buttons; read: leave server */
 .option-96V44q.searchOption-zQ-1l6, /* search thingy option */
 .connectedAccountOpenIcon-2cNbq5, /* link button on user fullscreen popout */
+.offline-3nJYBR.container-2Pjhx-, /* Offline */
 .wrapper-1ucjTd .content-3at_AU, /* Channel name */
 .name-IbjUBS.container-2ax-kl, /* Server category name */
 .button-14-BFJ.button-38aScr, /* Mute, deafen, settings */
@@ -242,7 +240,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 .item-1tOPte, /* Popup actions */
 .mention /* Role mentions */
 {
-	transition: background, color, background-color, opacity, box-shadow, var(--smoothened-transition-time);
+	transition: background, color, background-color, opacity, box-shadow, var(--smoothened-transition-time) !important;
 }
 
 .peopleListItem-2nzedh { /* Friends center menu item */
@@ -271,11 +269,11 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 /* Member popout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.scroller-2FKFPG.bodyInner-245q0L { /* Main background fades from top to bottom */
+.body-3iLsc4 { /* Main background fades from top to bottom */
 	background: linear-gradient(180deg, var(--background-tertiary) 0, var(--background-secondary) 75%);
 }
 
-.header-2BwW8b > .activityUserPopout-2yItg2.activity-11LB_k { /* ruins gradient otherwise (by default is rgba(0, 0, 0, 0.5)) .-. */
+.header-2BwW8b > .activityUserPopout-2yItg2.activity-11LB_k, .headerFill-adLl4x { /* ruins gradient otherwise (by default is rgba(0, 0, 0, 0.5)) .-. */
 	background-color: transparent;
 }
 
@@ -295,6 +293,10 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 .headerPlaying-j0WQBV.header-2BwW8b {
 	background: linear-gradient(180deg, var(--blurple) 0, var(--background-tertiary) 100%);
+}
+
+.topSectionPlaying-1J5E4n {
+	background: linear-gradient(180deg, var(--blurple) 0, var(--background-secondary) 80%);
 }
 
 /* Twitch */
@@ -354,12 +356,11 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z:hover:not(:focus-within) { /* Fun pseudo elements! Basically, on hover while not focused, display a dimmed version of the default bg */
 	background: var(--channeltextarea-background);
-	filter: brightness(0.9);
 }
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z:focus-within { /* while focused, add border + default border */
 	border: var(--smoothened-input-border-width) solid var(--blurple);
-	background: var(--channeltextarea-background);
+	background: var(--smoothened-input-focus);
 }
 
 .form-2fGMdU { /* Add transition to top margin, which is needed for the jump to present to move */
@@ -387,6 +388,30 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 .formText-3fs7AJ.description-3_Ncsb { /* Small margin change for Powercord hastebin text */
 	margin-top: 0.5em;
 	margin-left: 1px;
+}
+
+.sidebar-CFHs9e .header-2RyJ0Y {
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+
+	text-transform: none;
+}
+
+/* sliders */
+
+.barFill-23-gu- {
+	transition: width var(--smoothened-transition-time);
+}
+
+.grabber-3mFHz2 {
+	transition: left var(--smoothened-transition-time);
+}
+
+/* should be bigger to match the input border */
+
+.sizeMedium-1AC_Sl {
+	height: 40px;
 }
 
 /* Misc ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -426,7 +451,6 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 /* Notice banner dropdown */ 
 
-
 .notice-2FJMB4 {
 	border-radius: 0 0 8px 8px;
 }
@@ -456,43 +480,6 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 .marginTop60-3PGbtK {
 	margin-top: 30px !important;
 }
-
-/* <a> tags get a fancy thing now too */
-
-.anchorUnderlineOnHover-2ESHQB {
-	text-decoration: underline !important;
-	text-decoration-color: transparent !important;
-
-	transition: text-decoration-color var(--smoothened-transition-time);
-}
-
-.anchorUnderlineOnHover-2ESHQB:hover {
-	text-decoration-color: var(--text-link) !important;
-}
-
-/* and also mentions */
-
-.mention.wrapper-3WhCwL {
-	text-decoration: underline !important;
-	text-decoration-color: transparent !important;
-
-	transition: text-decoration-color var(--smoothened-transition-time);
-}
-
-.mention.wrapper-3WhCwL:hover {
-	text-decoration-color: var(--blurple) !important;
-}
-
-
-
-.sidebar-CFHs9e .header-2RyJ0Y {
-	font-size: 110%;
-	font-weight: 500;
-	color: white;
-
-	text-transform: none;
-}
-
 
 /* A small tweak on the user note thingy */
 
@@ -547,4 +534,96 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 .container-VSDcQc .input-1ppKdn {
 	margin: 0; /* friccing friccer trying to misalign */
+}
+
+
+/* Login authenticator thingy */
+
+.authBox-hW6HRx {
+	border-radius: 12px;
+}
+
+
+
+/* Reeeee I really don't like the status picker being big so gonna fix */
+
+#status-picker .scroller-3BxosC {
+	display: flex;
+	flex-direction: column;
+
+	width: min-content;
+
+	padding: 6px !important;
+}
+
+#status-picker .item-1tOPte {
+	height: min-content;
+}
+
+.status-1fhblQ, .description-2L932D {
+	display: none;
+}
+
+.statusItem-33LqPf {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: 0;
+
+	padding: 4px 6px;
+}
+
+
+.clearStatusButton-1Mxs1q {
+	margin-left: 0;
+}
+
+
+.clearStatusButton-1Mxs1q::before {
+	content: "✏️";
+	margin-right: 10px;
+}
+
+.customStatusWithEmoji-8-XZ8I .clearStatusButton-1Mxs1q::before {
+	display: none;
+}
+
+
+.item-1tOPte.colorDefault-2K3EoJ:not(.labelContainer-1BLJti) {
+	margin: 2px 4px !important;
+}
+
+.clearStatusButton-1Mxs1q, .item-1tOPte.colorDefault-2K3EoJ:not(.labelContainer-1BLJti) {
+	transform: translateX(-50%);
+	left: 50%;
+}
+
+.customText-tY5LJn {
+	display: none;
+}
+
+
+#status-picker .separator-2I32lJ {
+	display: none;
+}
+
+.menu-3sdvDG {
+	width: min-content;
+}
+
+
+/* Title bar */
+
+.titleBar-AC4pGV {
+
+	/* ugh */
+
+	background:
+				linear-gradient(90deg,
+								var(--background-tertiary) 72px, /* tert. up to the edge of the server list */
+								var(--background-secondary) calc(72px + calc(240px * 0.7)),  /* secondary at 70% of the channels list */
+								var(--background-primary) calc(240px + 72px), /* primary at the end */
+								var(--background-secondary) calc(calc(100% - 240px) * 0.65) /* fade into secondary at 65% of the remaining width from the members list */
+	);
 }
