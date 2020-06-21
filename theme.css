@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.0
+  * @version 2.3.1
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -579,22 +579,23 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 
 
 .clearStatusButton-1Mxs1q {
-	margin-left: 0;
-}
-
-
-.clearStatusButton-1Mxs1q::before {
-	content: "✏️";
 	margin-right: 10px;
 }
 
-.customStatusWithEmoji-8-XZ8I .clearStatusButton-1Mxs1q::before {
+
+.customStatusItem-1TTIxM::before {
+	content: "✏️";
+	margin-right: -6px;
+}
+
+
+.customStatusWithEmoji-8-XZ8I .customStatusItem-1TTIxM::before { /* don't display if emoji */
 	display: none;
 }
 
 
 .item-1tOPte.colorDefault-2K3EoJ:not(.labelContainer-1BLJti) {
-	margin: 2px 4px !important;
+	margin: 2px !important;
 }
 
 .clearStatusButton-1Mxs1q, .item-1tOPte.colorDefault-2K3EoJ:not(.labelContainer-1BLJti) {
