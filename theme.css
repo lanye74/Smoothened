@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.1
+  * @version 2.3.2
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -27,7 +27,9 @@ It was slightly modified to make it more light mode friendly though.
 
 	--smoothened-input-border-width: 1px;
 
-	--smoothened-input-focus: #474c57;
+	--smoothened-input-focus: #4e535e;
+
+	--text-muted: #80848b !important;
 }
 
 /* Friends header  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -109,8 +111,8 @@ It was slightly modified to make it more light mode friendly though.
 }
 
 .scroller-2FKFPG.messages-3amgkR.scroller-3sQKXg, /* Message container */
-.scroller-2FKFPG.nowPlayingScroller-2XrVUt, /* Friends: 'active now' container */
 .title-3qD0b-.container-1r6BKw, /* Channel name container */
+.nowPlayingColumn-2sl4cE, /* Friends: 'now playing' container */
 .chatContent-a9vAAp /* Text container */
 {
 	background: linear-gradient(90deg, var(--background-primary) 0, var(--background-secondary) 65%) !important;
@@ -118,10 +120,9 @@ It was slightly modified to make it more light mode friendly though.
 
 
 
-/* Leave server container */
-.modal-yWgWj- .footer-3rDWdC { /* ... the footer */
+.footer-2gL1pp { /* ... the footer */
 	background: linear-gradient(180deg, var(--background-primary) 30%, var(--background-secondary) 80%);
-	box-shadow: none; /* removes line */
+	box-shadow: none !important; /* removes line */
 }
 
 /* changelog */
@@ -158,19 +159,21 @@ It was slightly modified to make it more light mode friendly though.
 
 /* Scrollbars  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.scroller-2FKFPG::-webkit-scrollbar { /* Don't really need comments... */
+.scroller-2FKFPG::-webkit-scrollbar, .scrollerBase-289Jih::-webkit-scrollbar { /* Don't really need comments... */
 	width: 6px;
+	height: 6px;
 }
 
-html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
+html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scrollerBase-289Jih::-webkit-scrollbar {
 	width: 8px; /* ;---; */
+	height: 8px;
 }
 
-.scroller-2FKFPG::-webkit-scrollbar-thumb {
+.scroller-2FKFPG::-webkit-scrollbar-thumb, .scrollerBase-289Jih::-webkit-scrollbar-thumb {
 	border: none;
 }
 
-.scroller-2FKFPG::-webkit-scrollbar-track-piece {
+.scroller-2FKFPG::-webkit-scrollbar-track-piece, .scrollerBase-289Jih::-webkit-scrollbar-track-piece {
 	background-color: transparent !important;
 	border: none !important;
 }
@@ -233,6 +236,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 .listRow-hutiT_, /* More user popout stuff; mutual servers + friends */
 .button-1-5Aqk, /* recent mentions; jump/close mention */
 .button-F9qN4n, /* Emoji in context menu */
+.buttons-cl5qTG, /* Messages actions */
 .layout-2DM8Md, /* Online members */
 .item-3eFBNF, /* Powercord language options */
 .interactive, /* Personal mentions */
@@ -484,13 +488,13 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 /* A small tweak on the user note thingy */
 
 .note-3HfJZ5 textarea:hover:not(:focus) {
-	background-color: var(--background-primary) !important;
+	background-color: var(--background-secondary-alt) !important;
 }
 
 /* again */
 
 .note-QfFU8y textarea:hover:not(:focus) {
-	background-color: var(--background-primary) !important;
+	background-color: var(--background-secondary-alt) !important;
 }
 
 /* Also more stuff... */
@@ -630,4 +634,11 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar {
 								var(--background-primary) calc(240px + 72px), /* primary at the end */
 								var(--background-secondary) calc(calc(100% - 240px) * 0.65) /* fade into secondary at 65% of the remaining width from the members list */
 	);
+}
+
+
+/* more misc styles */
+
+em {
+	margin-right: 2px; /* discord is shit and doesn't do this already */
 }
