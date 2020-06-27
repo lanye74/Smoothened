@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.3
+  * @version 2.3.4
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -86,11 +86,11 @@ It was slightly modified to make it more light mode friendly though.
 	background: linear-gradient(180deg, var(--background-secondary) 10%, var(--background-tertiary) 70%);
 }
 
-.app-1q1i1E .scroller-2FKFPG.sidebarRegionScroller-3MXcoP, /* Settings */
 .container-2Rl01u:not(.hasBanner-14PPlG) > .header-2o-2hj, /* show a gradient only if there's not a banner  */
-.scroller-2FKFPG.scroller-2wx7Hm, /* Server channels container */
+.app-1q1i1E .sidebarRegionScroller-3MXcoP, /* Settings */
 .scroller-2FKFPG.scroller-1JbKMe, /* Friends list container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
+.scroller-2wx7Hm, /* Server channels container */
 .panels-j1Uci_ /* Profile container (at bottom) */
 {
 	background: linear-gradient(90deg, var(--background-tertiary) 0, var(--background-secondary) 70%, var(--background-primary) 100%);
