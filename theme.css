@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.4
+  * @version 2.3.5
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -88,7 +88,7 @@ It was slightly modified to make it more light mode friendly though.
 
 .container-2Rl01u:not(.hasBanner-14PPlG) > .header-2o-2hj, /* show a gradient only if there's not a banner  */
 .app-1q1i1E .sidebarRegionScroller-3MXcoP, /* Settings */
-.scroller-2FKFPG.scroller-1JbKMe, /* Friends list container */
+#private-channels, /* Friends list container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
 .scroller-2wx7Hm, /* Server channels container */
 .panels-j1Uci_ /* Profile container (at bottom) */
