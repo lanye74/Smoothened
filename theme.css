@@ -231,6 +231,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .spoilerWarning-2aAZq1, /* Spoiler warning */
 .note-3HfJZ5 textarea, /* User "note" textarea */
 .note-QfFU8y textarea, /* the other one */
+.headerText-2F0828, /* ... header text */
 .inviteRow-2L02ae, /* invite people person (...) */
 .emojiItem-14v6tW, /* Emoji in emoji picker */
 .voiceUser-14U_Ns, /* VC user */
@@ -254,9 +255,9 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 .categoryItemGuildCategory-3MisqI foreignObject, /* New emoji picker; servers on the side */
 .overlayToggleIcon-2liB3r, /* Game activity; toggle overlay */
+.arrow-gKvcEx.icon-WnO6o2, /* Server category arrow (collapser) */
 .addButtonIcon-3u-3Hu, /* Add channel in category */
 .icon-1IxfJ2 path /* Status menu icons (online, dnd, invis, idle) */
-.icon-WnO6o2, /* Server category arrow (collapser) */
 .icon-22AiRD, /* Mute channel, pins, recent mentions, help, member list */
 .icon-3D60ES /* Buttons in main chat box [useless] */
 {
@@ -650,4 +651,22 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 em {
 	margin-right: 2px; /* discord is shit and doesn't do this already */
+}
+
+
+.wrapper-1ucjTd .iconItem-1-bXkn {
+	display: initial !important;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.wrapper-1ucjTd:hover .iconItem-1-bXkn {
+	opacity: 1;
+	pointer-events: all;
+}
+
+
+
+.small-3iVZYw {
+	min-height: 0;
 }
