@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.5
+  * @version 2.3.7
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -335,6 +335,8 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	padding-bottom: 0;
 
 	transition: padding-bottom var(--smoothened-transition-time);
+
+	margin-bottom: 8px;
 }
 
 .jumpToPresentBar-9P20AM.barBase-39XTcM > .barButtonMain-1giYuj.barButtonBase-3UKlW2 { /* Remove text .-. */
@@ -379,17 +381,6 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z:focus-within .blockquoteDivider-2hH8H6 {
 	background-color: #696d73;
-}
-
-.form-2fGMdU { /* Add transition to top margin, which is needed for the jump to present to move */
-	transition: margin-top var(--smoothened-transition-time);
-}
-
-.form-2fGMdU.channelTextArea-rNsIhG.channelTextArea-2VhZ6z:hover,
-.form-2fGMdU:focus-within,
-.form-2fGMdU:hover /* Under any of these conditions, make the top margin normal (not -8) so that the jump to present moves up */
-{
-	margin-top: 0 !important;
 }
 
 .form-2fGMdU::before {
