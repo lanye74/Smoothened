@@ -111,13 +111,17 @@ It was slightly modified to make it more light mode friendly though.
 }
 
 .scroller-2FKFPG.messages-3amgkR.scroller-3sQKXg, /* Message container */
-.title-3qD0b-.container-1r6BKw, /* Channel name container */
 .nowPlayingColumn-2sl4cE, /* Friends: 'now playing' container */
+.gatedContent-3-B7qB, /* NSFW channel */
 .chatContent-a9vAAp /* Text container */
 {
-	background: linear-gradient(90deg, var(--background-primary) 0, var(--background-secondary) 65%) !important;
+	background: linear-gradient(90deg, var(--background-primary) 0%, var(--background-secondary) 65%) !important;
 }
 
+
+.scroller-11cdZM.thin-1ybCId.scrollerBase-289Jih { /* weird scrollbar */
+	overflow: auto !important;
+}
 
 
 .footer-2gL1pp { /* ... the footer */
@@ -631,6 +635,14 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 }
 
 
+
+.title-3qD0b-.container-1r6BKw { /* Channel name container */
+	background: linear-gradient(90deg, var(--background-primary) 0%, var(--background-secondary) calc(calc(100% - 240px) * 0.65)) !important;
+	/* start primary at 0, then go to 65% of the end of the channel container for secondary; matches the message container */
+}
+
+
+
 /* Title bar */
 
 .titleBar-AC4pGV {
@@ -638,12 +650,13 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	/* ugh */
 
 	background:
-				linear-gradient(90deg,
-								var(--background-tertiary) 72px, /* tert. up to the edge of the server list */
-								var(--background-secondary) calc(72px + calc(240px * 0.7)),  /* secondary at 70% of the channels list */
-								var(--background-primary) calc(240px + 72px), /* primary at the end */
-								var(--background-secondary) calc(calc(100% - 240px) * 0.65) /* fade into secondary at 65% of the remaining width from the members list */
-	);
+		linear-gradient(90deg,
+			var(--background-tertiary) 72px, /* 72px - width of servers list */
+			var(--background-secondary) calc(72px + calc(240px * 0.7)), /* Secondary at 70% */
+			var(--background-primary) calc(72px + 240px), /* Primary at the end */
+			var(--background-secondary) calc(0.65 * calc(100% - 240px)) /* secondary at the end, minus the user container */
+		)
+	;
 }
 
 
