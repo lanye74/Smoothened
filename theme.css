@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.7
+  * @version 2.3.8
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -334,8 +334,6 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 	padding-bottom: 0;
 
-	transition: padding-bottom var(--smoothened-transition-time);
-
 	margin-bottom: 8px;
 }
 
@@ -545,7 +543,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	margin: 0; /* friccing friccer trying to misalign */
 }
 
-.roleCircle-3xAZ1j {
+.roleRemoveIcon-2-TeGW {
 	cursor: pointer;
 }
 
@@ -673,4 +671,12 @@ em {
 
 .small-3iVZYw {
 	min-height: 0;
+}
+
+
+
+/* channel wrapper */
+
+.content-3at_AU {
+	height: 100%;
 }
