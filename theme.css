@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.3.9
+  * @version 2.4.0
   * @description Smoothened, *everything.*
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -113,7 +113,8 @@ It was slightly modified to make it more light mode friendly though.
 .scroller-2FKFPG.messages-3amgkR.scroller-3sQKXg, /* Message container */
 .nowPlayingColumn-2sl4cE, /* Friends: 'now playing' container */
 .gatedContent-3-B7qB, /* NSFW channel */
-.chatContent-a9vAAp /* Text container */
+.chatContent-a9vAAp, /* Text container */
+.noChannel-Z1DQK7 /* No channels */
 {
 	background: linear-gradient(90deg, var(--background-primary) 0%, var(--background-secondary) 65%) !important;
 }
@@ -151,9 +152,10 @@ It was slightly modified to make it more light mode friendly though.
 	box-shadow: 0 0 12px #860b0b;
 }
 
+
 /* Fix the server image thingy */
 
-.animatedContainer-1pJv5C { /* Image has high prio */
+.animatedContainer-1pJv5C { /* Server image has high prio */
 	z-index: 2;
 }
 
