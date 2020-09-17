@@ -1,7 +1,7 @@
 /**
   * @name Smoothened
-  * @version 2.4.0
-  * @description Smoothened, *everything.*
+  * @version 2.4.1
+  * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
   * @author LayneTheEpic#9891
@@ -257,6 +257,10 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 .peopleListItem-2nzedh { /* Friends center menu item */
 	transition: background var(--smoothened-transition-time); /* I dunno why it's so picky with other transitions ;-; */
+}
+
+.avatarSmall-2CW6I1 {
+	transition: box-shadow var(--smoothened-transition-time); /* avatar in VC, animates border */
 }
 
 .categoryItemGuildCategory-3MisqI foreignObject, /* New emoji picker; servers on the side */
