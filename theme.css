@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.4.1
+  * @version 2.4.2
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -685,4 +685,10 @@ em {
 
 .content-3at_AU {
 	height: 100%;
+}
+
+/* suppressed */
+
+.redIcon-2uP7Ej {
+	color: var(--blurple) !important;
 }
