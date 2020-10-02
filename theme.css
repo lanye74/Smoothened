@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.4.2
+  * @version 2.4.3
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -217,12 +217,12 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 /* Transitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .voiceUser-14U_Ns > .content-3xS9Lh > .username-lm8y6T, /* VC user name */
-.withFrame-haYltI.titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... anyways these are the min, max, close buttons */
 .message-2qnXI6.cozyMessage-3V1Y8y.wrapper-2a6GCs, /* Message */
 .latin24CompactTimeStamp-2V7XIQ.timestamp-3ZCmNB, /* Message timestamp */
 .iconVisibility-1bOqu7.wrapper-1ucjTd, /* Channel background, essentially */
 .lookFilled-1Gx00P.colorRed-1TFJan, /* Red buttons; read: leave server */
 .option-96V44q.searchOption-zQ-1l6, /* search thingy option */
+.titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... min, max, close buttons */
 .connectedAccountOpenIcon-2cNbq5, /* link button on user fullscreen popout */
 .offline-3nJYBR.container-2Pjhx-, /* Offline */
 .wrapper-1ucjTd .content-3at_AU, /* Channel name */
@@ -652,6 +652,9 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 			var(--background-secondary) calc(0.65 * calc(100% - 240px)) /* secondary at the end, minus the user container */
 		)
 	;
+
+	margin-top: 0; /* annoying */
+	padding-top: 2px;
 }
 
 
