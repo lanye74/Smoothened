@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.4.3
+  * @version 2.4.4
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -48,6 +48,7 @@ It was slightly modified to make it more light mode friendly though.
 .panel-24C3ux.activityPanel-28dQGo, /* Stream activity */
 #pinned-messages .header-ykumBX, /* pinned messages header */
 .noticeStreamerMode-2TSQpg, /* Streamer mode dropdown */ 
+.animatedContainer-1NSq4T, /* Server image container */
 .connectedAccount-36nQx7, /* Connected account item */
 .userInfoSection-2acyCx, /* Top of connected accounts */
 .tabBarContainer-1s1u-z, /* User fullscreen popout */
@@ -55,7 +56,7 @@ It was slightly modified to make it more light mode friendly though.
 .content-yTz4x3::before, /* Channel header */
 .peopleListItem-2nzedh, /* server person */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
-.header-2o-2hj, /*Server menu dropdown inside */
+.header-2V-4Sw, /*Server menu dropdown inside */
 .game-1ipmAa, /* Game activity item */
 .item-3eFBNF /* Powercord translation thingy */
 {
@@ -86,11 +87,11 @@ It was slightly modified to make it more light mode friendly though.
 	background: linear-gradient(180deg, var(--background-secondary) 10%, var(--background-tertiary) 70%);
 }
 
-.container-2Rl01u:not(.hasBanner-14PPlG) > .header-2o-2hj, /* show a gradient only if there's not a banner  */
+.container-1taM1r:not(.hasBanner-2SrLR3) > .header-2V-4Sw, /* show a gradient only if there's not a banner  */
 .app-1q1i1E .sidebarRegionScroller-3MXcoP, /* Settings */
 #private-channels, /* Friends list container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
-.scroller-2wx7Hm, /* Server channels container */
+.scroller-RmtA4e, /* Server channels container */
 .panels-j1Uci_ /* Profile container (at bottom) */
 {
 	background: linear-gradient(90deg, var(--background-tertiary) 0, var(--background-secondary) 70%, var(--background-primary) 100%);
@@ -155,11 +156,11 @@ It was slightly modified to make it more light mode friendly though.
 
 /* Fix the server image thingy */
 
-.animatedContainer-1pJv5C { /* Server image has high prio */
+.animatedContainer-1NSq4T { /* Server image has high prio */
 	z-index: 2;
 }
 
-.header-2o-2hj { /* ...but header is higher */
+.header-2V-4Sw { /* ...but header is higher */
 	z-index: 3;
 }
 
@@ -216,17 +217,15 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* Transitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.voiceUser-14U_Ns > .content-3xS9Lh > .username-lm8y6T, /* VC user name */
 .message-2qnXI6.cozyMessage-3V1Y8y.wrapper-2a6GCs, /* Message */
 .latin24CompactTimeStamp-2V7XIQ.timestamp-3ZCmNB, /* Message timestamp */
-.iconVisibility-1bOqu7.wrapper-1ucjTd, /* Channel background, essentially */
 .lookFilled-1Gx00P.colorRed-1TFJan, /* Red buttons; read: leave server */
 .option-96V44q.searchOption-zQ-1l6, /* search thingy option */
 .titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... min, max, close buttons */
 .connectedAccountOpenIcon-2cNbq5, /* link button on user fullscreen popout */
 .offline-3nJYBR.container-2Pjhx-, /* Offline */
 .wrapper-1ucjTd .content-3at_AU, /* Channel name */
-.name-IbjUBS.container-2ax-kl, /* Server category name */
+.name-3l27Hl.container-2ax-kl, /* Server category name */
 .button-14-BFJ.button-38aScr, /* Mute, deafen, settings */
 .side-8zPYf6 > .item-PXvHYJ, /* Settings item */
 .embedSuppressButton-1FonMn, /* Hide embed */
@@ -240,7 +239,9 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .headerText-2F0828, /* ... header text */
 .inviteRow-2L02ae, /* invite people person (...) */
 .emojiItem-14v6tW, /* Emoji in emoji picker */
-.voiceUser-14U_Ns, /* VC user */
+.username-3KYl0N, /* VC user name */
+.content-1x5b-n, /* Channel background, essentially */
+.content-1Wq3SX, /* VC user */
 .listRow-hutiT_, /* More user popout stuff; mutual servers + friends */
 .button-1-5Aqk, /* recent mentions; jump/close mention */
 .button-F9qN4n, /* Emoji in context menu */
@@ -248,7 +249,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .layout-2DM8Md, /* Online members */
 .item-3eFBNF, /* Powercord language options */
 .interactive, /* Personal mentions */
-.name-3_Dsmg, /* Channel name */
+.name-23GUGE, /* Channel name */
 .item-1tOPte, /* Popup actions */
 .mention /* Role mentions */
 {
@@ -265,7 +266,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 .categoryItemGuildCategory-3MisqI foreignObject, /* New emoji picker; servers on the side */
 .overlayToggleIcon-2liB3r, /* Game activity; toggle overlay */
-.arrow-gKvcEx.icon-WnO6o2, /* Server category arrow (collapser) */
+.arrow-gKvcEx.icon-2yIBmh, /* Server category arrow (collapser) */
 .addButtonIcon-3u-3Hu, /* Add channel in category */
 .icon-1IxfJ2 path /* Status menu icons (online, dnd, invis, idle) */
 .icon-22AiRD, /* Mute channel, pins, recent mentions, help, member list */
@@ -654,7 +655,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	;
 
 	margin-top: 0; /* annoying */
-	padding-top: 2px;
+	padding-top: 0;
 }
 
 
