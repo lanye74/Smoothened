@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.4.4
+  * @version 2.4.5
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -88,6 +88,7 @@ It was slightly modified to make it more light mode friendly though.
 }
 
 .container-1taM1r:not(.hasBanner-2SrLR3) > .header-2V-4Sw, /* show a gradient only if there's not a banner  */
+.guilds-1SWlCJ ~ .base-3dtUhz .sidebar-2K8pFh, /* Explore servers thingy */
 .app-1q1i1E .sidebarRegionScroller-3MXcoP, /* Settings */
 #private-channels, /* Friends list container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
@@ -110,7 +111,7 @@ It was slightly modified to make it more light mode friendly though.
 		fun
 	*/
 }
-
+.guilds-1SWlCJ ~ .base-3dtUhz .scroller-1d5FgU, /* Explore servers main body container */
 .scroller-2FKFPG.messages-3amgkR.scroller-3sQKXg, /* Message container */
 .nowPlayingColumn-2sl4cE, /* Friends: 'now playing' container */
 .gatedContent-3-B7qB, /* NSFW channel */
