@@ -22,8 +22,8 @@ It was slightly modified to make it more light mode friendly though.
 :root {
 	--smoothened-transition-time: 0.2s;
 	
-	--smoothened-selection-color: #a5b3ff;
-	--blurple: #7289da;
+	--smoothened-selection-color: #5865f2d2;
+	--blurple: #5865f2;
 
 	--smoothened-input-border-width: 1px;
 
@@ -34,7 +34,7 @@ It was slightly modified to make it more light mode friendly though.
 
 /* Friends header  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.container-2Rl01u, /* /* Server menu (dropdown) */
+.container-2Rl01u, /* Server menu (dropdown) */
 .container-1r6BKw, /* Friends menu bar */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
 .header-2o-2hj /*Server menu dropdown inside */
