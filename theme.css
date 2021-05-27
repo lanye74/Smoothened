@@ -287,8 +287,8 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* Member popout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.body-3iLsc4 { /* Main background fades from top to bottom */
-	background: linear-gradient(180deg, var(--background-tertiary) 0, var(--background-secondary) 75%);
+.userPopout-3XzG_A .headerTop-2y3V6H { /* Remove border */
+	border-bottom: none;
 }
 
 .header-2BwW8b > .activityUserPopout-2yItg2.activity-11LB_k, .headerFill-adLl4x { /* ruins gradient otherwise (by default is rgba(0, 0, 0, 0.5)) .-. */
