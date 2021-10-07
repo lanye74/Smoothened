@@ -670,6 +670,12 @@ em {
 }
 
 
+em > span > img.emoji {
+	transform: translateX(4px) translateY(-1px) rotate(4deg); /* :) */
+}
+
+
+
 .wrapper-1ucjTd .iconItem-1-bXkn {
 	display: initial !important;
 	opacity: 0;
