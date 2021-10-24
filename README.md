@@ -1,3 +1,3 @@
 # Smoothened
 
-Everything is smoother.™ 
+Everything is smoother.™

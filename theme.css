@@ -1,10 +1,10 @@
 /**
   * @name Smoothened
-  * @version 2.4.5
+  * @version 2.4.6
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
-  * @author LayneTheEpic#9891
+  * @author lanye#8909
   * @license MIT
   **/
 
@@ -21,7 +21,7 @@ It was slightly modified to make it more light mode friendly though.
 
 :root {
 	--smoothened-transition-time: 0.2s;
-	
+
 	--smoothened-selection-color: #5865f2d2;
 	--blurple: #5865f2;
 
@@ -44,10 +44,11 @@ It was slightly modified to make it more light mode friendly though.
 
 /* Remove ugleeeee lines ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+.nowPlayingColumn-2sl4cE .container-lRFx4q .scroller-2ZPeAD, /* Now playing container */
 .panels-j1Uci_ > .container-1giJp5, /* Underneath stream to server */
 .panel-24C3ux.activityPanel-28dQGo, /* Stream activity */
 #pinned-messages .header-ykumBX, /* pinned messages header */
-.noticeStreamerMode-2TSQpg, /* Streamer mode dropdown */ 
+.noticeStreamerMode-2TSQpg, /* Streamer mode dropdown */
 .animatedContainer-1NSq4T, /* Server image container */
 .connectedAccount-36nQx7, /* Connected account item */
 .userInfoSection-2acyCx, /* Top of connected accounts */
@@ -102,9 +103,9 @@ It was slightly modified to make it more light mode friendly though.
 
 .container-1r6BKw { /* Top bar (friends list) */
 	background: linear-gradient(90deg, var(--background-primary) calc(100% - 420px), var(--background-secondary) calc(100% - calc(420px - calc(420px * 0.65)))) !important;
-	
+
 	/* AAAAA MY BRAIN HURTS */
-	
+
 	/* let me explain:
 		linear gradient from left to right
 		first color stop is at 100%-420px (container [max] width: 420px), which is at the left-most side of the thing, start at 100%, - width of the container - 65% of it's width
@@ -113,14 +114,35 @@ It was slightly modified to make it more light mode friendly though.
 		fun
 	*/
 }
+
+.peopleColumn-29fq28 { /* ae */
+	background: linear-gradient(90deg, var(--background-primary) calc(0%), var(--background-secondary) calc(100% - calc(420px - calc(420px * 0.65))));
+}
+
+.nowPlayingColumn-2sl4cE .container-lRFx4q /* Friends: 'now playing' container */ {
+	background: var(--background-secondary);
+}
+
+.itemCard-v9viV7.wrapper-3D2qGf {
+	background: var(--activity-card-background);
+}
+
 .guilds-1SWlCJ ~ .base-3dtUhz .scroller-1d5FgU, /* Explore servers main body container */
 .scroller-2FKFPG.messages-3amgkR.scroller-3sQKXg, /* Message container */
-.nowPlayingColumn-2sl4cE, /* Friends: 'now playing' container */
 .gatedContent-3-B7qB, /* NSFW channel */
 .chatContent-a9vAAp, /* Text container */
 .noChannel-Z1DQK7 /* No channels */
 {
 	background: linear-gradient(90deg, var(--background-primary) 0%, var(--background-secondary) 65%) !important;
+}
+
+
+.attachedBars-tZDmyV {
+	background: var(--background-secondary-alt);
+}
+
+.attachedBars-tZDmyV .replyBar-1YLQ2F {
+	background: transparent;
 }
 
 
@@ -227,6 +249,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .titleBar-AC4pGV .winButton-iRh8-Z, /* ugh, no mac support ;-;... min, max, close buttons */
 .connectedAccountOpenIcon-2cNbq5, /* link button on user fullscreen popout */
 .offline-3nJYBR.container-2Pjhx-, /* Offline */
+.itemCard-v9viV7.wrapper-3D2qGf, /* activity cards */
 .wrapper-1ucjTd .content-3at_AU, /* Channel name */
 .name-3l27Hl.container-2ax-kl, /* Server category name */
 .button-14-BFJ.button-38aScr, /* Mute, deafen, settings */
@@ -246,7 +269,9 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .content-1x5b-n, /* Channel background, essentially */
 .content-1Wq3SX, /* VC user */
 .listRow-hutiT_, /* More user popout stuff; mutual servers + friends */
+.wrapper-2aW0bm, /* Message options wrapper */
 .button-1-5Aqk, /* recent mentions; jump/close mention */
+.button-1ZiXG9, /* message option buttons */
 .button-F9qN4n, /* Emoji in context menu */
 .buttons-cl5qTG, /* Messages actions */
 .layout-2DM8Md, /* Online members */
@@ -336,7 +361,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* Jump to present ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.jumpToPresentBar-G1R9s6.barBase-1c2Rfb { /* Center it and convert width to wrap around elements */
+.jumpToPresentBar-G1R9s6 { /* Center it and convert width to wrap around elements */
 	width: max-content;
 
 	transform: translateX(-50%); /* center */
@@ -347,11 +372,11 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	margin-bottom: 8px;
 }
 
-.jumpToPresentBar-G1R9s6.barBase-1c2Rfb > .barButtonMain-3K-jeJ.barButtonBase-2uLO1z { /* Remove text .-. */
+.jumpToPresentBar-G1R9s6 > .barButtonMain-3K-jeJ.barButtonBase-2uLO1z { /* Remove text .-. */
 	display: none;
 }
 
-.jumpToPresentBar-G1R9s6.barBase-1c2Rfb > .spinner-2enMB9.spinner-1AwyAQ { /* Fix padding */
+.jumpToPresentBar-G1R9s6 > .spinner-2enMB9.spinner-1AwyAQ { /* Fix padding */
 	padding-right: 0 !important;
 	padding: 8px !important;
 }
@@ -360,10 +385,10 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 .form-2fGMdU .channelTextArea-rNsIhG.channelTextArea-2VhZ6z { /* Main text area; accomadate for border */
 	margin-bottom: calc(24px - var(--smoothened-input-border-width));
-	
-	
+
+
 	border: var(--smoothened-input-border-width) solid transparent;
-	
+
 	transition: background, border, filter, var(--smoothened-transition-time);
 }
 
@@ -458,7 +483,9 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 .content-1o0f9g { /* Message date divider */
 	color: var(--interactive-normal); /* Lighten up some colors (so you can seeee)*/
-	background: none;
+	background: var(--background-modifier-accent);
+	padding: 7px;
+	border-radius: 16px;
 }
 
 .game-1ipmAa { /* Game activity item */
@@ -466,7 +493,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	margin-bottom: 3px;
 }
 
-/* Notice banner dropdown */ 
+/* Notice banner dropdown */
 
 .notice-2FJMB4 {
 	border-radius: 0 0 8px 8px;
@@ -635,8 +662,8 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 
 
-.title-3qD0b-.container-1r6BKw /* Channel name container */
-{ 
+.container-1r6BKw /* Channel name container */
+{
 	background: linear-gradient(90deg, var(--background-primary) 0%, var(--background-secondary) calc(calc(100% - 240px) * 0.65)) !important;
 	/* start primary at 0, then go to 65% of the end of the channel container for secondary; matches the message container */
 }
@@ -705,4 +732,20 @@ em > span > img.emoji {
 
 .redIcon-2uP7Ej {
 	color: var(--blurple) !important;
+}
+
+
+
+/* too lazy to oragnize this */
+
+.actionButton-uPB8Fs {
+	background: var(--background-tertiary);
+}
+
+.peopleListItem-2nzedh {
+	height: auto !important;
+
+	transition: padding, height, var(--smoothened-transition-time);
+
+	padding: 16px 10px;
 }
