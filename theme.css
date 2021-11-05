@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.4.6
+  * @version 2.4.7
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -58,6 +58,7 @@ It was slightly modified to make it more light mode friendly though.
 .peopleListItem-2nzedh, /* server person */
 .channelNotice-2bJINM, /* stage alert container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
+.divider-3C88Um, /* server boost goal thing */
 .header-2V-4Sw, /*Server menu dropdown inside */
 .game-1ipmAa, /* Game activity item */
 .item-3eFBNF /* Powercord translation thingy */
