@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.4.7
+  * @version 2.4.8
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -58,13 +58,16 @@ It was slightly modified to make it more light mode friendly though.
 .peopleListItem-2nzedh, /* server person */
 .channelNotice-2bJINM, /* stage alert container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
+.divider-3FBTu8, /* friends | online   all   pending   blocked  separator */
 .divider-3C88Um, /* server boost goal thing */
+.divider-ewBQKj, /* user popout divider */
 .header-2V-4Sw, /*Server menu dropdown inside */
 .game-1ipmAa, /* Game activity item */
 .item-3eFBNF /* Powercord translation thingy */
 {
 	box-shadow: none !important;
 	border: none !important;
+	background: none;
 }
 
 .footer-3rDWdC .content-3CCvMx::before, /* various footers */
@@ -93,7 +96,7 @@ It was slightly modified to make it more light mode friendly though.
 .container-1taM1r:not(.hasBanner-2SrLR3) > .header-2V-4Sw, /* show a gradient only if there's not a banner  */
 .guilds-1SWlCJ ~ .base-3dtUhz .sidebar-2K8pFh, /* Explore servers thingy */
 .app-1q1i1E .sidebarRegionScroller-3MXcoP, /* Settings */
-#private-channels, /* Friends list container */
+.scroller-1JbKMe, /* Friends list container */
 .searchBar-6Kv8R2, /* "Find or start a conversation" */
 .container-3w7J-x, /* stage alert container */
 .scroller-RmtA4e, /* Server channels container */
@@ -315,16 +318,8 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* Member popout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.userPopout-3XzG_A .headerTop-2y3V6H { /* Remove border */
-	border-bottom: none;
-}
-
 .header-2BwW8b > .activityUserPopout-2yItg2.activity-11LB_k, .headerFill-adLl4x { /* ruins gradient otherwise (by default is rgba(0, 0, 0, 0.5)) .-. */
 	background-color: transparent;
-}
-
-.footer-1fjuF6 { /* More lines to remove */
-	border: none;
 }
 
 /* Customize popout gradient to seamlessly connect with bottom gradient */
@@ -739,14 +734,37 @@ em > span > img.emoji {
 
 /* too lazy to oragnize this */
 
-.actionButton-uPB8Fs {
+.actionButton-uPB8Fs { /* match button bg in people list */
 	background: var(--background-tertiary);
 }
 
-.peopleListItem-2nzedh {
+.peopleListItem-2nzedh { /* scale hovered people in people list */
 	height: auto !important;
 
 	transition: padding, height, var(--smoothened-transition-time);
 
 	padding: 16px 10px;
+}
+
+
+
+
+/* edit popout member */
+.userPopout-xaxa6l .popoutBanner-19WKGg {
+	height: 80px;
+}
+
+.userPopout-xaxa6l .headerTop-3vNv-a {
+	transform: translateY(-20px);
+	background: linear-gradient(180deg, transparent 0, var(--background-floating) 20px);
+}
+
+.userPopout-xaxa6l .body-3HBlXn {
+	transform: translateY(-20px);
+}
+
+.userPopout-xaxa6l .footer-3UKYOU {
+	transform: translateY(-20px);
+	margin-top: -2px;
+	padding: 0 16px 0;
 }
