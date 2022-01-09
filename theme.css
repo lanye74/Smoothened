@@ -1,6 +1,6 @@
 /**
   * @name Smoothened
-  * @version 2.5.0
+  * @version 2.5.1
   * @description Everything is smoother.™
   * @source https://github.com/LayneTheEpic/Smoothened
   * @authorId 393898580177321985
@@ -150,7 +150,7 @@ It was slightly modified to make it more light mode friendly though.
 }
 
 
-.scroller-3KyaqJ.thin-1ybCId.scrollerBase-_bVAAt { /* weird scrollbar */
+.scroller-3KyaqJ.thin-31rlnD.scrollerBase-_bVAAt { /* weird scrollbar */
 	overflow: auto !important;
 }
 
@@ -233,12 +233,12 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* Game icons ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.gameIcon-gg34Dz.gameIcon-1siQqm { /* Makes a fun little ani */
+.gameIcon-1mDo1J.gameIcon-1siQqm { /* Makes a fun little ani */
 	transition: 0.7s ease-out;
 	transform: none;
 }
 
-.gameIcon-gg34Dz.gameIcon-1siQqm:hover {
+.gameIcon-1mDo1J.gameIcon-1siQqm:hover {
 	transform: translateY(-3px) scale(1.2) rotate(330deg);
 	transition-delay: 2s; /* In hover so it's 1-way */
 }
@@ -250,7 +250,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .latin24CompactTimeStamp-2pXUBq.timestamp-p1Df1m, /* Message timestamp */
 .lookFilled-1Gx00P.colorRed-1TFJan, /* Red buttons; read: leave server */
 .option-2KkUJO.searchOption-351dTI, /* search thingy option */
-.titleBar-1it3bQ .winButton-iRh8-Z, /* ugh, no mac support ;-;... min, max, close buttons */
+.titleBar-1it3bQ .winButton-3UMjdg, /* ugh, no mac support ;-;... min, max, close buttons */
 .connectedAccountOpenIcon-2cNbq5, /* link button on user fullscreen popout */
 .offline-22aM7E.container-1oeRFJ, /* Offline */
 .itemCard-3Etziu.wrapper-2RrXDg, /* activity cards */
@@ -260,14 +260,14 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 .side-2ur1Qk > .item-3XjbnG, /* Settings item */
 .embedSuppressButton-1rZHq6, /* Hide embed */
 .blockquoteDivider-363utW, /* because of my channel textarea thing */
-.item-26Dhrx.card-16VQ8C, /* Discord-style radio inputs */
+.item-2idW98.card-16VQ8C, /* Discord-style radio inputs */
 .connectedAccount-36nQx7, /* Connected account item */
 .inviteRowButton-3hcOhY, /* invite people person invite button (...) */
 .spoilerWarning-8ovW0v, /* Spoiler warning */
 .note-3HfJZ5 textarea, /* User "note" textarea */
 .note-QfFU8y textarea, /* the other one */
 .headerText-1qIDDT, /* ... header text */
-.inviteRow-2L02ae, /* invite people person (...) */
+.inviteRow-3vmB7i, /* invite people person (...) */
 .emojiItem-277VFM, /* Emoji in emoji picker */
 .username-vAneIW, /* VC user name */
 .content-1gYQeQ, /* Channel background, essentially */
@@ -296,7 +296,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	transition: box-shadow var(--smoothened-transition-time); /* avatar in VC, animates border */
 }
 
-.categoryItemGuildCategory-3MisqI foreignObject, /* New emoji picker; servers on the side */
+.categoryItemGuildCategory-3mvXlo foreignObject, /* New emoji picker; servers on the side */
 .overlayToggleIcon-2NLk4w, /* Game activity; toggle overlay */
 .arrow-2HswgU.icon-3zI3d2, /* Server category arrow (collapser) */
 .addButtonIcon-3u-3Hu, /* Add channel in category */
@@ -357,7 +357,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* Jump to present ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.jumpToPresentBar-G1R9s6 { /* Center it and convert width to wrap around elements */
+.jumpToPresentBar-1cEnH0 { /* Center it and convert width to wrap around elements */
 	width: max-content;
 
 	transform: translateX(-50%); /* center */
@@ -368,11 +368,11 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	margin-bottom: 8px;
 }
 
-.jumpToPresentBar-G1R9s6 > .barButtonMain-3K-jeJ.barButtonBase-Sk2mdB { /* Remove text .-. */
+.jumpToPresentBar-1cEnH0 > .barButtonMain-2GIx4o.barButtonBase-Sk2mdB { /* Remove text .-. */
 	display: none;
 }
 
-.jumpToPresentBar-G1R9s6 > .spinner-2RT7ZC.spinner-3xAPm0 { /* Fix padding */
+.jumpToPresentBar-1cEnH0 > .spinner-2RT7ZC.spinner-3xAPm0 { /* Fix padding */
 	padding-right: 0 !important;
 	padding: 8px !important;
 }
@@ -423,7 +423,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	height: 0;
 }
 
-.formText-2ngGjI.description-3_Ncsb { /* Small margin change for Powercord hastebin text */
+.formText-2ngGjI.description-30xx7u { /* Small margin change for Powercord hastebin text */
 	margin-top: 0.5em;
 	margin-left: 1px;
 }
@@ -501,14 +501,14 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 	padding: 8px 4px;
 }
 
-.item-3eFBNF .flex-1xMQg5.flex-3BkGQD {
+.item-3eFBNF .flex-2S1XBF.flex-3BkGQD {
 	display: flex;
 	align-items: center;
 
 	padding: 0.25em;
 }
 
-.item-3eFBNF .description-3_Ncsb.formText-2ngGjI {
+.item-3eFBNF .description-30xx7u.formText-2ngGjI {
 	margin-top: 0;
 }
 
@@ -543,7 +543,7 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 
 /* User fullscreen popout */
 
-.modal-3c3bKg .topSectionNormal-2-vo2m {
+.modal-3Crloo .topSectionNormal-2-vo2m {
 	background: linear-gradient(var(--background-tertiary) 50%, var(--background-secondary) 100%);
 }
 
@@ -623,13 +623,13 @@ html.theme-light .scroller-2FKFPG::-webkit-scrollbar, html.theme-light .scroller
 }
 
 
-.customStatusItem-1TTIxM::before {
+.customStatusItem-1qQzss::before {
 	content: "✏️";
 	margin-right: -6px;
 }
 
 
-.customStatusWithEmoji-8-XZ8I .customStatusItem-1TTIxM::before { /* don't display if emoji */
+.customStatusWithEmoji-Y8lMLP .customStatusItem-1qQzss::before { /* don't display if emoji */
 	display: none;
 }
 
